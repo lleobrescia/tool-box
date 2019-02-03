@@ -1,0 +1,28 @@
+/*!
+Theme Name: Tool Box
+Theme URI: http://underscores.me/
+Author: Leo Brescia
+Author URI: https://leobrescia.com.br/
+Description: A Wordpress theme for Tool Box
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: tool-box
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Tool Box is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+@import 'utils/module';
+@import 'base/module';
+@import 'components/module';
+@import 'layout/module';
+@import 'pages/module';
+@import 'themes/module';
+@import 'vendors/module';
