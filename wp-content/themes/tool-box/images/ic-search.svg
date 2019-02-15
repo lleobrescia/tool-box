@@ -1,0 +1,17 @@
+<svg id="ic-search.svg" xmlns="http://www.w3.org/2000/svg" width="13.09" height="13.094" viewBox="0 0 13.09 13.094">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle id="Elipse_1" data-name="Elipse 1" class="cls-1" cx="8.09" cy="5.031" r="4"/>
+  <path id="Forma_1" data-name="Forma 1" class="cls-2" d="M1422.65,305.268l-3.54,3.535" transform="translate(-1416.69 -296.719)"/>
+</svg>

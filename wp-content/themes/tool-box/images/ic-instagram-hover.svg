@@ -1,0 +1,26 @@
+<svg id="ic-instagram-hover.svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #fff;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 1px;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #5e5e5e;
+      }
+
+      .cls-3 {
+        fill: #5e5e5e;
+      }
+    </style>
+  </defs>
+  <rect id="Retângulo_Arredondado_809_copiar" data-name="Retângulo Arredondado 809 copiar" class="cls-1" x="0.5" y="0.5" width="19" height="19" rx="4" ry="4"/>
+  <circle id="Elipse_811" data-name="Elipse 811" class="cls-2" cx="10" cy="10" r="3.06"/>
+  <circle id="Elipse_811_copiar" data-name="Elipse 811 copiar" class="cls-3" cx="15.5" cy="5.5" r="1"/>
+</svg>
