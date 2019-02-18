@@ -166,7 +166,7 @@ gulp.task('browsersync', () => {
   browsersync.create();
   browsersync.init({
     proxy: 'localhost/tool-box',
-    files: ['*.css', '**/*.php', '**/*.js', '!node_modules/**/*.*', '!bower_components*.*'],
+    files: ['**/*.php', '**/*.js', '!node_modules/**/*.*', '!bower_components*.*'],
     open: false,
     notify: false,
     ghostMode: false,
@@ -183,8 +183,6 @@ gulp.task('browsersync', () => {
  */
 gulp.task('watch', ['styles', 'browsersync'], function () {
   gulp.watch(styleWatchFiles, ['styles'], browsersync.reload);
-  gulp.watch(phpSRC, [], browsersync.reload);
-  gulp.watch(imagesSRC, [], browsersync.reload);
 });
 
 /**
