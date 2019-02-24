@@ -92,6 +92,11 @@ add_action( 'wp_enqueue_scripts', 'tool_box_scripts' );
  */
 require get_template_directory() . '/inc/custom-header.php';
 
+/**
+ * Implement the Custom Menu feature.
+ */
+require get_template_directory() . '/inc/custom-menu.php';
+
 
 /**
  * Load Jetpack compatibility file.
