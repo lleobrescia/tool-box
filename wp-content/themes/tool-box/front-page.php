@@ -14,13 +14,15 @@
 
 get_header();
 
-$banner       = get_field('banner');
+$bannerObj    = get_field('banner');
 $categories   = get_field('categorias');
-$category = $categories[0];
 
-var_dump($categories);
+$banner = wp_get_attachment_image($bannerObj['id'], 'full');
 ?>
-<div id="content" class="site-content">
+<div id="content" class="site-content home">
+  <section class="home__banner">
+    <?= $banner; ?>
+  </section>
   <?php
     foreach ($categories as $category) {
       query_posts(array(
@@ -33,7 +35,7 @@ var_dump($categories);
       wp_reset_query();
     }
 
-  ?>
+    ?>
 
 </div><!-- #content -->
 <script>
