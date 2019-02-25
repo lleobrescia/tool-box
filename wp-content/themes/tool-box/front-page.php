@@ -36,6 +36,7 @@ $banner = wp_get_attachment_image($bannerObj['id'], 'full');
     }
 
     get_template_part( 'template-parts/content', 'instagram' );
+    get_template_part( 'template-parts/content', 'newsletter' );
     ?>
 
 </div><!-- #content -->
