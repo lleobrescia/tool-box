@@ -35,6 +35,7 @@ $banner = wp_get_attachment_image($bannerObj['id'], 'full');
       wp_reset_query();
     }
 
+    get_template_part( 'template-parts/content', 'instagram' );
     ?>
 
 </div><!-- #content -->
