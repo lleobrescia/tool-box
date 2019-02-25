@@ -21,30 +21,48 @@ $category = $categories[0];
 var_dump($categories);
 ?>
 <div id="content" class="site-content">
-
-  <div class="post-list container">
-    <?php
+  <?php
+    foreach ($categories as $category) {
       query_posts(array(
         'category_name' => $category->slug,
         'posts_per_page' => 3
       ));
-    ?>
-    <div class="row">
-      <div class="col-12">
-        <h2><?= $category->name; ?></h2>
-      </div>
-    </div>
 
-    <div class="row">
-      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-      <div class="col-4">
-        <?php post_preview(get_the_title(), get_the_permalink(), get_the_post_thumbnail( get_the_ID(), 'full')); ?>
-      </div>
-      <?php endwhile; endif; ?>
-    </div>
-    <?php wp_reset_query(); ?>
+      include(locate_template('template-parts/post-list.php', false, false));
 
-  </div>
+      wp_reset_query();
+    }
+
+  ?>
+
 </div><!-- #content -->
+<script>
+jQuery(document).ready(function() {
+  var width = jQuery(window).width();
+  jQuery(window).resize(function() {
+    var width = jQuery(window).width();
+    slider(width);
+  });
+  slider(width);
+});
+
+function slider(width) {
+  if (width <= 768) {
+    if (window.sldr) {
+      window.sldr.destroySlider();
+    }
+    window.sldr = jQuery('.bxslider').bxSlider({
+      preloadImages: 'all',
+      controls: false,
+      minSlides: 1,
+      maxSlides: 1,
+      shrinkItems: true,
+      mode: 'fade'
+    });
+  } else {
+    window.sldr.destroySlider();
+  }
+}
+</script>
 <?php
 get_footer();
