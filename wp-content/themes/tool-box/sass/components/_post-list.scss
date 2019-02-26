@@ -1,0 +1,34 @@
+.post-list {
+  background-color: white;
+
+  padding-bottom: 68px;
+  @extend %site-wrapper;
+
+  &__title {
+    font-size: 3.000rem;
+    font-weight: 100;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+.see-more {
+  position: relative;
+
+  &__hr {
+    position: absolute;
+    top: -6px;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__link {
+    background: white;
+    color: black;
+    font-weight: 100;
+    margin-right: 55px;
+    padding: 0 16px;
+    position: relative;
+    z-index: 2;
+  }
+}

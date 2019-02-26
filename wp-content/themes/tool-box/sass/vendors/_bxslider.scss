@@ -1,0 +1,15 @@
+.bx {
+  &-wrapper {
+    max-width: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  &-viewport{
+    .row{
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}
