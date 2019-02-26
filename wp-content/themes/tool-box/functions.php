@@ -112,6 +112,11 @@ require get_template_directory() . '/inc/custom-menu.php';
 require get_template_directory() . '/inc/breadcrumb.php';
 
 /**
+ * Implement the Related Posts.
+ */
+require get_template_directory() . '/inc/related-posts.php';
+
+/**
  * Implement the Type Post Receitas.
  */
 require get_template_directory() . '/inc/receitas-type-post.php';
