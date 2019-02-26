@@ -21,7 +21,7 @@ $categories     = get_field('categorias');
 $banner = wp_get_attachment_image($banner_obj['id'], 'full');
 ?>
 <div id="content" class="site-content home">
-  <section class="home__banner">
+  <section class="home__banner d-none d-md-block">
     <?php if($banner_link): ?>
       <a href="<?= $banner_link; ?>">
     <?php endif; ?>
