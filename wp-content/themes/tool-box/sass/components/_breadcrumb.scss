@@ -1,0 +1,23 @@
+.post-path {
+  padding-bottom: 10px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      @include font-size(12);
+      font-weight: 300;
+
+      color: black a {
+        color: black
+      }
+    }
+  }
+
+  &__separador {
+    margin: 0 5px;
+  }
+}
