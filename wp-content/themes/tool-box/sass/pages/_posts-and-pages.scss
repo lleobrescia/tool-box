@@ -5,6 +5,10 @@
 .content-area {
   padding-top: 15px;
   @extend %site-wrapper;
+
+  .comentarios {
+    padding-bottom: 94px;
+  }
 }
 
 .post {
@@ -30,18 +34,6 @@
       margin-bottom: 28px;
       text-align: center;
       @include font-size(24);
-    }
-
-    .related-posts {
-
-
-      &__single {}
-
-      &__link {}
-
-      &__figure {}
-
-      &__title {}
     }
   }
 }

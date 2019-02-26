@@ -9,8 +9,12 @@
 
 get_header();
 ?>
+<div id="fb-root"></div>
+<script async defer
+  src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=261860337652460&autoLogAppEvents=1">
+</script>
 
-<div id="primary" class="content-area">
+<section id="primary" class="content-area">
   <div class="container">
     <div class="post-path">
       <hr>
@@ -19,12 +23,12 @@ get_header();
 
     <main id="main" class="site-main">
       <?php
-            while (have_posts()): the_post();
+        while (have_posts()): the_post();
 
-              get_template_part('template-parts/content');
+          get_template_part('template-parts/content');
 
-            endwhile; // End of the loop.
-            ?>
+        endwhile; // End of the loop.
+      ?>
     </main><!-- #main -->
 
     <section class="post__aside">
@@ -38,9 +42,16 @@ get_header();
 
       <?php tool_box_related_posts(); ?>
 
+      <section class="row">
+        <div class="comentarios">
+          <div class="fb-comments" data-href="<?= esc_url(get_the_permalink()); ?>" data-numposts="5"></div>
+        </div> <!-- comentarios -->
+      </section> <!-- row -->
+
     </section>
   </div> <!-- container -->
-</div><!-- #primary -->
+  <?php get_template_part( 'template-parts/content', 'newsletter' ); ?>
+  </div><!-- #primary -->
 
-<?php
+  <?php
 get_footer();
