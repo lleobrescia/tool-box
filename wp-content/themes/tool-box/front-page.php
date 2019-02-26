@@ -14,14 +14,21 @@
 
 get_header();
 
-$bannerObj    = get_field('banner');
-$categories   = get_field('categorias');
+$banner_obj     = get_field('banner');
+$banner_link    = get_field('link_banner');
+$categories     = get_field('categorias');
 
-$banner = wp_get_attachment_image($bannerObj['id'], 'full');
+$banner = wp_get_attachment_image($banner_obj['id'], 'full');
 ?>
 <div id="content" class="site-content home">
   <section class="home__banner">
-    <?= $banner; ?>
+    <?php if($banner_link): ?>
+      <a href="<?= $banner_link; ?>">
+    <?php endif; ?>
+      <?= $banner; ?>
+    <?php if($banner_link): ?>
+      </a>
+    <?php endif; ?>
   </section>
   <?php
     foreach ($categories as $category) {
