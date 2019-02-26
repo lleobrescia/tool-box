@@ -36,16 +36,15 @@
 <body <?php body_class(); ?>>
   <div id="page" class="site">
 
-    <div class="container">
-      <header id="masthead" class="site-header">
+    <header id="masthead" class="site-header">
+      <div class="container">
         <div class="row top top--desktop">
 
           <div class="top-icons">
             <ul class="top-icons__social">
               <li>
                 <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img class="logo__img"
-                    src="<?= get_stylesheet_directory_uri(); ?>/images/ic-face.svg"
+                  <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-face.svg"
                     onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-face-hover.svg'"
                     onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-face.svg'"
                     alt="<?php bloginfo('name'); ?> - Facebook">
@@ -53,8 +52,7 @@
               </li>
               <li>
                 <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img class="logo__img"
-                    src="<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram.svg"
+                  <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram.svg"
                     onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram-hover.svg'"
                     onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram.svg'"
                     alt="<?php bloginfo('name'); ?> - Instagram">
@@ -62,8 +60,7 @@
               </li>
               <li>
                 <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img class="logo__img"
-                    src="<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube.svg"
+                  <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube.svg"
                     onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube-hover.svg'"
                     onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube.svg'"
                     alt="<?php bloginfo('name'); ?> - Youtube">
@@ -71,36 +68,36 @@
               </li>
               <li>
                 <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img class="logo__img"
-                    src="<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest.svg"
+                  <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest.svg"
                     onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest-hover.svg'"
                     onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest.svg'"
                     alt="<?php bloginfo('name'); ?> - Pinterest">
                 </a>
               </li>
             </ul>
+
             <div class="top-icons__links">
               <a href="">Quem somos</a>
               <span>/</span>
               <a href="">Contato</a>
-            </div>
+            </div> <!-- top-icons__links -->
 
-          </div>
+          </div> <!-- top-icons -->
+
           <div class="col-12 logo">
             <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" title="<?php bloginfo('name'); ?>">
               <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/tool-box.png"
                 alt="<?php bloginfo('name'); ?>">
             </a>
-          </div>
+          </div> <!-- logo -->
 
           <div class="col-12 menu">
             <?php
-            tool_box_custom_menu('menu-1');
-            get_search_form();
+              tool_box_custom_menu('menu-1');
+              get_search_form();
             ?>
+          </div> <!-- menu -->
 
-          </div>
-
-        </div>
-      </header><!-- #masthead -->
-    </div>
+        </div> <!-- top--desktop -->
+      </div> <!-- container -->
+    </header><!-- #masthead -->
