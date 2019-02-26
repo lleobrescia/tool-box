@@ -2,22 +2,26 @@
   display: block;
 }
 
-.post,
-.page {
-  margin: 0 0 1.5em;
+.content-area {
+  @extend %site-wrapper;
+  padding-top: 15px;
 }
 
-.updated:not(.published) {
-  display: none;
-}
+.post {
+  padding-bottom: 84px;
 
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
+  &__title {
+    margin-top: 40px;
+    text-align: center;
+    @include font-size(48);
+    font-weight: 100;
+    color: black;
+    margin-bottom: 30px;
+  }
 
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em;
+  &__content {
+    p {
+      margin-bottom: 17px;
+    }
+  }
 }

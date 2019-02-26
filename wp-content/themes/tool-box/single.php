@@ -10,28 +10,27 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div id="primary" class="content-area">
+  <main id="main" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+    <div class="container">
+      <div class="post-path">
+        <hr>
+        <?php tool_box_breadcrumb() ?>
+      </div><!-- breadcrumb -->
 
-			get_template_part( 'template-parts/content', get_post_type() );
+      <?php
+      while ( have_posts() ) :
+        the_post();
 
-			the_post_navigation();
+        get_template_part( 'template-parts/content' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+      endwhile; // End of the loop.
+    ?>
+    </div> <!-- container -->
 
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+  </main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
