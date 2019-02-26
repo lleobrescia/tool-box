@@ -106,6 +106,10 @@ require get_template_directory() . '/inc/custom-header.php';
  */
 require get_template_directory() . '/inc/custom-menu.php';
 
+/**
+ * Implement the Type Post Receitas.
+ */
+require get_template_directory() . '/inc/receitas-type-post.php';
 
 /**
  * Load Jetpack compatibility file.
