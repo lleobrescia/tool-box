@@ -20,8 +20,8 @@
         </h2>
         <!-- LightWidget WIDGET -->
         <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe
-          src="http://lightwidget.com/widgets/9dd0f2bd29a351fca70726ffced3127b.html" scrolling="no"
-          allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+          src="http://lightwidget.com/widgets/776aef3d62ef50839aed3d61632dec2a.html" scrolling="no" allowtransparency="true"
+          class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
 
       </div>
     </div>
