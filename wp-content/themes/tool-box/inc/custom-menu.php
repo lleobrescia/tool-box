@@ -14,11 +14,11 @@
  * @uses tool_box_custom_menu()
  */
 
-function tool_box_custom_menu($theme_location)
+function tool_box_custom_menu($theme_location, $menu_class)
 {
   if (($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location])) {
-    $menu_list  = '<nav class="navbar">' . "\n";
-    $menu_list  .= '<ul class="navbar-nav">' . "\n";
+    $menu_list  = '<nav class="'.$menu_class.'">' . "\n";
+    $menu_list  .= '<ul class="'.$menu_class.'-nav">' . "\n";
 
     $menu       = get_term($locations[$theme_location], 'nav_menu');
     $menu_items = wp_get_nav_menu_items($menu->term_id);
@@ -32,7 +32,7 @@ function tool_box_custom_menu($theme_location)
         foreach ($menu_items as $submenu) {
           if ($submenu->menu_item_parent == $parent) {
             $bool = true;
-            $menu_array[] = '<li class="navbar-nav__item"><a class="navbar-nav__link" title="' . $submenu->title . '" href="' . $submenu->url . '">' . $submenu->title . '</a></li>' . "\n";
+            $menu_array[] = '<li class="'.$menu_class.'-nav__item"><a class="'.$menu_class.'-nav__link" title="' . $submenu->title . '" href="' . $submenu->url . '">' . $submenu->title . '</a></li>' . "\n";
           }
         }
         if ($bool == true && count($menu_array) > 0) {
@@ -45,8 +45,8 @@ function tool_box_custom_menu($theme_location)
           $menu_list .= '</ul>' . "\n";
         } else {
 
-          $menu_list .= '<li class="navbar-nav__item">' . "\n";
-          $menu_list .= '<a class="navbar-nav__link"  title="' . $menu_item->title . '" href="' . $menu_item->url . '">' . $menu_item->title . '</a>' . "\n";
+          $menu_list .= '<li class="'.$menu_class.'-nav__item">' . "\n";
+          $menu_list .= '<a class="'.$menu_class.'-nav__link"  title="' . $menu_item->title . '" href="' . $menu_item->url . '">' . $menu_item->title . '</a>' . "\n";
         }
       }
 

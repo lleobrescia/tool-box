@@ -1,0 +1,22 @@
+<svg id="youtube-white.svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 1px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="Retângulo_Arredondado_809_copiar_2" data-name="Retângulo Arredondado 809 copiar 2" class="cls-1" x="0.5" y="0.5" width="19" height="19" rx="4" ry="4"/>
+  <rect id="Retângulo_Arredondado_814" data-name="Retângulo Arredondado 814" class="cls-2" x="3.5" y="5.5" width="13" height="9" rx="2" ry="2"/>
+  <path id="Forma_815" data-name="Forma 815" class="cls-3" d="M490,63v7l6-3.5Z" transform="translate(-482.5 -56.5)"/>
+</svg>

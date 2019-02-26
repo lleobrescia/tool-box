@@ -1,0 +1,18 @@
+<svg id="facebook-white.svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 1px;
+      }
+
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Forma_869" data-name="Forma 869" class="cls-1" d="M442,74V65s-0.551-2,4-2" transform="translate(-431.5 -56.5)"/>
+  <path id="Forma_870" data-name="Forma 870" class="cls-1" d="M438,68h8" transform="translate(-431.5 -56.5)"/>
+  <rect id="Retângulo_Arredondado_809_copiar_3" data-name="Retângulo Arredondado 809 copiar 3" class="cls-2" x="0.5" y="0.5" width="19" height="19" rx="4" ry="4"/>
+</svg>

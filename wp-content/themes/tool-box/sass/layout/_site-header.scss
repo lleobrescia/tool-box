@@ -9,6 +9,14 @@
         display: none;
       }
     }
+
+    &--mobile {
+      display: none;
+
+      @media (max-width: 991.98px) {
+        display: block;
+      }
+    }
   }
 
   .logo {
@@ -92,4 +100,123 @@
     }
   }
 
+  .mobile-header {
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    min-height: 155px;
+    margin-bottom: 38px;
+
+    .menu-icon {
+      padding-top: 30px;
+      cursor: pointer;
+      position: relative;
+      z-index: 9;
+    }
+
+    .logo {
+      position: absolute;
+      margin: 0;
+      top: 30px;
+      left: 0;
+      right: 0;
+
+      img {
+        width: 125px;
+      }
+    }
+
+    .icons-mobile {
+      padding-top: 30px;
+    }
+
+    &__links {
+      text-align: right;
+      margin-top: 17px;
+
+      a {
+        color: black !important;
+        @include font-size(12);
+        font-weight: 300;
+        text-transform: uppercase;
+        display: block;
+      }
+
+    }
+  }
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 100000;
+  width: 270px;
+  overflow-y: auto;
+  padding: 30px 20px 20px;
+  background: #ffffff;
+  left: 0;
+  transition: all 0.5s;
+  transform: translateX(-270px);
+
+  &-nav {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+
+    &__item {
+      display: block;
+      border-bottom: 1px solid #DEDEDE;
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+    &__link {
+      font-weight: normal;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      color: #313131;
+      margin: 0;
+      position: relative;
+      padding: 12px 0 12px 0;
+      display: block;
+      line-height: 1.3em;
+      font-weight: bold;
+    }
+  }
+}
+
+.close-sidebar-nav {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  text-decoration: none;
+  top: 0;
+  left: 0;
+  font-size: 1.4em;
+  color: #313131;
+  padding: 10px;
+  height: 100%;
+  background: rgba(0, 0, 0, .8);
+  right: 0;
+  z-index: 100000;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.sidebar-active {
+  overflow: hidden;
+
+  .close-sidebar-nav {
+    left: 270px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sidebar {
+    left: 270px;
+  }
 }

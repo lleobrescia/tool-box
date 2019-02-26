@@ -34,11 +34,25 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <script>
+  jQuery(document).ready(function() {
+    jQuery("#button-menu-mobile").on("click", function() {
+      jQuery("body").addClass("sidebar-active");
+    });
+
+    jQuery("#close-sidebar-nav").on("click", function() {
+      jQuery("body").removeClass("sidebar-active");
+    });
+  });
+  </script>
+  <div id="close-sidebar-nav" class="close-sidebar-nav"></div>
+  <?php tool_box_custom_menu('menu-1', 'sidebar'); ?>
+
   <div id="page" class="site">
 
     <header id="masthead" class="site-header">
       <div class="container">
-        <div class="row top top--desktop">
+        <section class="row top top--desktop">
 
           <div class="top-icons">
             <ul class="top-icons__social">
@@ -93,11 +107,61 @@
 
           <div class="col-12 menu">
             <?php
-              tool_box_custom_menu('menu-1');
+              tool_box_custom_menu('menu-1', 'navbar');
               get_search_form();
             ?>
           </div> <!-- menu -->
 
-        </div> <!-- top--desktop -->
+        </section> <!-- top--desktop -->
+
+        <section class="row top top--mobile">
+          <div class="col-12">
+            <div class="mobile-header">
+              <div id="button-menu-mobile" class="menu-icon">
+                <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-menu.svg" alt="Menu">
+              </div>
+              <div class="logo">
+                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" title="<?php bloginfo('name'); ?>">
+                  <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/tool-box.png"
+                    alt="<?php bloginfo('name'); ?>">
+                </a>
+              </div>
+              <div class="icons-mobile">
+                <ul class="top-icons__social">
+                  <li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                      <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-face-white.svg"
+                        alt="<?php bloginfo('name'); ?> - Facebook">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                      <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram-white.svg"
+                        alt="<?php bloginfo('name'); ?> - Instagram">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                      <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube-white.svg"
+                        alt="<?php bloginfo('name'); ?> - Youtube">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                      <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest-white.svg"
+                        alt="<?php bloginfo('name'); ?> - Pinterest">
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="mobile-header__links">
+                  <a href="">Quem somos</a>
+                  <a href="">Contato</a>
+                </div> <!-- mobile-header__links -->
+
+              </div> <!-- icons-mobile -->
+            </div> <!-- mobile-header -->
+          </div> <!-- col-12 -->
+        </section> <!-- top--mobile -->
       </div> <!-- container -->
     </header><!-- #masthead -->
