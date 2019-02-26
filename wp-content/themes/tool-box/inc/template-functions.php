@@ -14,7 +14,7 @@
  * @param object $img
  * @return string
  */
-function post_preview($title, $link, $img)
+function tool_box_post_preview($title, $link, $img)
 {
   echo '<section class="post-preview">
   <a href="' . $link . '" class="post-preview__link" rel="next" title="' . $title . '"></a>

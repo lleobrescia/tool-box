@@ -19,7 +19,7 @@
     <div class="row bxslider">
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
       <div class="col-md-4 ">
-        <?php post_preview(get_the_title(), get_the_permalink(), get_the_post_thumbnail( get_the_ID(), 'full')); ?>
+        <?php tool_box_post_preview(get_the_title(), get_the_permalink(), get_the_post_thumbnail( get_the_ID(), 'full')); ?>
       </div> <!-- col-md-4 -->
       <?php endwhile; endif; ?>
     </div> <!-- bxslider -->
