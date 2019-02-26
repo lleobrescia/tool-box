@@ -11,26 +11,59 @@
 
 ?>
 
+<footer id="colophon" class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="site-footer__info">
+          <img class="site-footer__logo" src="<?= get_stylesheet_directory_uri(); ?>/images/tool-box.png"
+            alt="<?php bloginfo('name'); ?>">
 
+          <div>
+            <div class="site-footer__social">
+              <a href="" target="_blank" rel="noopener noreferrer">
+                instagram
+              </a> /
+              <a href="" target="_blank" rel="noopener noreferrer">
+                facebook
+              </a> /
+              <a href="" target="_blank" rel="noopener noreferrer">
+                youtube
+              </a> /
+              <a href="" target="_blank" rel="noopener noreferrer">
+                pinterest
+              </a>
+            </div> <!-- site-footer__social -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'tool-box' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'tool-box' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'tool-box' ), 'tool-box', '<a href="https://leobrescia.com.br/">Leo Brescia</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+            <div class="site-footer__link">
+              <a href="" target="_blank" rel="noopener noreferrer">QUEM SOMOS</a> |
+              <a href="" target="_blank" rel="noopener noreferrer">CONTATO</a> |
+              <a href="" target="_blank" rel="noopener noreferrer">LOJA VIRTUAL</a>
+            </div> <!-- site-footer__link -->
+
+            <p class="site-footer__copy">
+              TODOS OS DIREITOS RESERVADOS &copy;
+            </p>
+          </div>
+
+        </div> <!-- site-footer__info -->
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+
+    <a href="http://joaquimrodrigues.com.br/" target="_blank" rel="noopener noreferrer" title="Joaquim Rodriguês" class="float-right">
+      <img class="site-footer__logo" src="<?= get_stylesheet_directory_uri(); ?>/images/joaquim_rodrigues.png"
+        alt="Joaquim Rodriguês">
+    </a>
+  </div> <!-- container -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<div style="display:none">
+  Theme Tool Box by <a target="_blank" rel="noopener noreferrer" href="https://leobrescia.com.br/"
+    title="Leo Brescia">Leo Brescia</a>
+</div>
 <?php wp_footer(); ?>
 
 </body>
+
 </html>
