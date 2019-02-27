@@ -1,0 +1,27 @@
+.categoria {
+  .post-preview {
+    margin-bottom: 25px;
+  }
+
+  &__banner {
+    position: relative;
+
+    figure {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__title {
+    bottom: 37px;
+    color: white;
+    font-weight: 100;
+    left: 0;
+    letter-spacing: 5px;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    @include font-size(36);
+  }
+}
