@@ -1,0 +1,65 @@
+.receitas {
+
+  .site-main {
+    padding-bottom: 52px;
+  }
+
+  &-single {
+    position: relative;
+    margin-bottom: 30px;
+
+    figure {
+      align-items: center;
+      display: flex;
+      height: 233px;
+      justify-content: center;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        height: 233px;
+        object-fit: cover;
+        transition: all .2s ease-in-out;
+        width: 350px;
+      }
+    }
+
+    &__title {
+      @include font-size(21);
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 400;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        padding: 15px 19px;
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    a {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      &:hover+.receitas-single__title {
+        span {
+          background-color: rgba(255, 216, 0, 0.8);
+          ;
+        }
+      }
+    }
+  }
+}
