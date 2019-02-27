@@ -41,6 +41,23 @@ var imagemin      = require('gulp-imagemin');
 var del           = require('del');
 var vinylPaths    = require('vinyl-paths');
 var browsersync   = require('browser-sync');
+var gutil         = require('gulp-util');
+var plumber       = require('gulp-plumber');
+
+
+/**
+ * Handle errors.
+ */
+function handleErrors () {
+  var args = Array.prototype.slice.call(arguments);
+  notify.onError({
+    title: 'Task Failed [<%= error.message %>',
+    message: 'See console.',
+    sound: 'Sosumi'
+  }).apply(this, args);
+  gutil.beep();
+  this.emit('end');
+}
 
 /**
  * Task: styles
@@ -52,6 +69,9 @@ var browsersync   = require('browser-sync');
  */
 gulp.task('styles', function () {
   gulp.src(styleSRC)
+    .pipe(plumber({
+      errorHandler: handleErrors
+    }))
     .pipe(sourcemaps.init())
     .pipe(sass({
       errLogToConsole: true,
@@ -90,7 +110,8 @@ gulp.task('styles', function () {
     .pipe(notify({
       message: 'TASK: "styles" Completed!',
       onLast: true
-    }));
+    }))
+    .pipe(browsersync.reload({stream: true}));
 });
 
 /**
@@ -166,7 +187,7 @@ gulp.task('browsersync', () => {
   browsersync.create();
   browsersync.init({
     proxy: 'localhost/tool-box',
-    files: ['*.css', '**/*.php', '**/*.js', '!node_modules/**/*.*', '!bower_components*.*'],
+    files: ['**/*.php', '**/*.js', '!node_modules/**/*.*', '!bower_components*.*'],
     open: false,
     notify: false,
     ghostMode: false,
@@ -181,10 +202,8 @@ gulp.task('browsersync', () => {
  *
  * Watches for file changes and runs specific tasks.
  */
-gulp.task('watch', ['styles', 'browsersync'], function () {
-  gulp.watch(styleWatchFiles, ['styles'], browsersync.reload);
-  gulp.watch(phpSRC, [], browsersync.reload);
-  gulp.watch(imagesSRC, [], browsersync.reload);
+gulp.task('watch', ['browsersync', 'styles'], function () {
+  gulp.watch(styleWatchFiles, ['styles']);
 });
 
 /**

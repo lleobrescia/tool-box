@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme
  *
@@ -11,48 +12,156 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+<!--[if IE 7]>
+<html class="ie ie7 no-js" <?php language_attributes(); ?> >
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8 no-js" <?php language_attributes(); ?> >
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html class="no-js" <?php language_attributes(); ?>>
 
-	<?php wp_head(); ?>
+<head>
+  <meta charset="<?php bloginfo('charset'); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+
+  <?php wp_head(); ?>
+  <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'tool-box' ); ?></a>
+  <script>
+  jQuery(document).ready(function() {
+    jQuery("#button-menu-mobile").on("click", function() {
+      jQuery("body").addClass("sidebar-active");
+    });
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$tool_box_description = get_bloginfo( 'description', 'display' );
-			if ( $tool_box_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $tool_box_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+    jQuery("#close-sidebar-nav").on("click", function() {
+      jQuery("body").removeClass("sidebar-active");
+    });
+  });
+  </script>
+  <div id="close-sidebar-nav" class="close-sidebar-nav"></div>
+  <?php tool_box_custom_menu('menu-1', 'sidebar'); ?>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'tool-box' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+  <div id="page" class="site">
 
-	<div id="content" class="site-content">
+    <header id="masthead" class="site-header">
+      <div class="container">
+        <section class="row top top--desktop">
+
+          <div class="top-icons">
+            <ul class="top-icons__social">
+              <li>
+                <a href="http://" target="_blank" rel="noopener noreferrer">
+                  <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-face.svg"
+                    onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-face-hover.svg'"
+                    onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-face.svg'"
+                    alt="<?php bloginfo('name'); ?> - Facebook">
+                </a>
+              </li>
+              <li>
+                <a href="http://" target="_blank" rel="noopener noreferrer">
+                  <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram.svg"
+                    onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram-hover.svg'"
+                    onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram.svg'"
+                    alt="<?php bloginfo('name'); ?> - Instagram">
+                </a>
+              </li>
+              <li>
+                <a href="http://" target="_blank" rel="noopener noreferrer">
+                  <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube.svg"
+                    onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube-hover.svg'"
+                    onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube.svg'"
+                    alt="<?php bloginfo('name'); ?> - Youtube">
+                </a>
+              </li>
+              <li>
+                <a href="http://" target="_blank" rel="noopener noreferrer">
+                  <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest.svg"
+                    onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest-hover.svg'"
+                    onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest.svg'"
+                    alt="<?php bloginfo('name'); ?> - Pinterest">
+                </a>
+              </li>
+            </ul>
+
+            <div class="top-icons__links">
+              <a href="">Quem somos</a>
+              <span>/</span>
+              <a href="">Contato</a>
+            </div> <!-- top-icons__links -->
+
+          </div> <!-- top-icons -->
+
+          <div class="col-12 logo">
+            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" title="<?php bloginfo('name'); ?>">
+              <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/tool-box.png"
+                alt="<?php bloginfo('name'); ?>">
+            </a>
+          </div> <!-- logo -->
+
+          <div class="col-12 menu">
+            <?php
+              tool_box_custom_menu('menu-1', 'navbar');
+              get_search_form();
+            ?>
+          </div> <!-- menu -->
+
+        </section> <!-- top--desktop -->
+
+        <section class="row top top--mobile">
+          <div class="col-12">
+            <div class="mobile-header">
+              <div id="button-menu-mobile" class="menu-icon">
+                <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-menu.svg" alt="Menu">
+              </div>
+              <div class="logo">
+                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" title="<?php bloginfo('name'); ?>">
+                  <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/tool-box.png"
+                    alt="<?php bloginfo('name'); ?>">
+                </a>
+              </div>
+              <div class="icons-mobile">
+                <ul class="top-icons__social">
+                  <li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                      <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-face-white.svg"
+                        alt="<?php bloginfo('name'); ?> - Facebook">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                      <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram-white.svg"
+                        alt="<?php bloginfo('name'); ?> - Instagram">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                      <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube-white.svg"
+                        alt="<?php bloginfo('name'); ?> - Youtube">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                      <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest-white.svg"
+                        alt="<?php bloginfo('name'); ?> - Pinterest">
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="mobile-header__links">
+                  <a href="">Quem somos</a>
+                  <a href="">Contato</a>
+                </div> <!-- mobile-header__links -->
+
+              </div> <!-- icons-mobile -->
+            </div> <!-- mobile-header -->
+          </div> <!-- col-12 -->
+        </section> <!-- top--mobile -->
+      </div> <!-- container -->
+    </header><!-- #masthead -->

@@ -1,0 +1,150 @@
+.newsletter {
+  margin-top: -14px;
+  padding-bottom: 53px;
+  @extend %site-wrapper;
+
+  &__title {
+    color: white;
+    padding-left: 70px;
+    padding-top: 21px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+    @include font-size(22);
+
+    @media (min-width: 555px) {
+      @include font-size(24);
+    }
+
+    &::before {
+      background: url('images/semi-circulo-news.png') center no-repeat;
+      background-size: contain;
+      content: "";
+      height: 88px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 288px;
+      z-index: -1;
+    }
+
+    span {
+      color: black;
+      left: 86px;
+      position: relative;
+      text-transform: lowercase;
+      top: -2px;
+      @include font-size(16);
+
+      @media (max-width: 498px) {
+        display: block;
+        margin-left: 5px;
+        position: initial;
+      }
+
+      @media (min-width: 555px) {
+        @include font-size(18);
+      }
+    }
+  }
+
+  &__sub-title {
+    color: black;
+    font-weight: 100;
+    line-height: 21px;
+    @include font-size(21);
+
+    @media (min-width: 991px) {
+      line-height: 36px;
+      @include font-size(36);
+    }
+  }
+
+  &__info {
+    z-index: 1;
+
+    @media (min-width: 1199px) {
+      margin-top: -34px;
+    }
+  }
+
+  &__form {
+    @media (min-width: 767px) {
+      justify-content: flex-end;
+    }
+
+    .form-group {
+      margin-right: 8px;
+      width: 100%;
+
+      &--cidade {
+        max-width: 100%;
+
+        @media (min-width: 513px) {
+          max-width: 156px;
+        }
+
+        @media (min-width: 767px) {
+          max-width: 240px;
+        }
+      }
+
+      &--email {
+        max-width: 100%;
+
+        @media (min-width: 513px) {
+          max-width: 315px;
+        }
+
+        @media (min-width: 767px) {
+          max-width: 400px;
+        }
+
+        @media (min-width: 1199px) {
+          max-width: 494px;
+        }
+      }
+    }
+
+    .form-control {
+      background-color: black;
+      border: none;
+      border-radius: 0;
+      color: white;
+      height: 67px;
+      padding-left: 25px;
+      width: 100% !important;
+      @include font-size(18);
+
+      &:focus {
+        background-color: black;
+        border-color: transparent;
+        box-shadow: none;
+        color: white;
+      }
+
+      &::-webkit-input-placeholder,
+      &::-moz-placeholder,
+      &:-ms-input-placeholder,
+      &:-moz-placeholder {
+        color: white;
+        @include font-size(18);
+      }
+    }
+
+    .btn {
+      background-color: $gray-600;
+      font-weight: 400;
+      line-height: 17px;
+      padding: 16px 32px;
+      @include font-size(20);
+
+      @media (max-width: 767px) {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 17px;
+      }
+    }
+  }
+}

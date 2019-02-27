@@ -9,29 +9,54 @@
 
 get_header();
 ?>
+<div id="fb-root"></div>
+<script async defer
+  src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=261860337652460&autoLogAppEvents=1">
+</script>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<section id="primary" class="content-area">
+  <div class="container">
+    <div class="post-path">
+      <hr>
+      <?php tool_box_breadcrumb() ?>
+    </div><!-- breadcrumb -->
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+    <main id="main" class="site-main">
+      <?php
+        while (have_posts()): the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+          get_template_part('template-parts/content');
 
-			the_post_navigation();
+        endwhile; // End of the loop.
+      ?>
+    </main><!-- #main -->
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+    <section class="post__aside">
 
-		endwhile; // End of the loop.
-		?>
+      <div class="row">
+        <div class="col-12">
+          <hr>
+          <h3>Curtiu? Você vai curtir essas também!</h3>
+        </div> <!-- col-12 -->
+      </div> <!-- row -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+      <?php
+        if(get_post_type( get_the_ID() )=== 'receita')
+          tool_box_related_posts(true);
+        else
+          tool_box_related_posts(false);
+      ?>
 
-<?php
-get_sidebar();
+      <section class="row">
+        <div class="comentarios">
+          <div class="fb-comments" data-href="<?= esc_url(get_the_permalink()); ?>" data-numposts="5"></div>
+        </div> <!-- comentarios -->
+      </section> <!-- row -->
+
+    </section>
+  </div> <!-- container -->
+  <?php get_template_part( 'template-parts/content', 'newsletter' ); ?>
+  </div><!-- #primary -->
+
+  <?php
 get_footer();

@@ -79,7 +79,11 @@ add_action( 'after_setup_theme', 'tool_box_setup' );
  * Enqueue scripts and styles.
  */
 function tool_box_scripts() {
-	wp_enqueue_style( 'tool-box-style', get_stylesheet_uri() );
+  wp_enqueue_style('bxslider-css', 'https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css');
+
+  wp_enqueue_style( 'tool-box-style', get_stylesheet_uri(), array('bxslider-css') );
+
+  wp_enqueue_script('bxslider-js', 'https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js', array('jquery'), '20151215', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -88,9 +92,34 @@ function tool_box_scripts() {
 add_action( 'wp_enqueue_scripts', 'tool_box_scripts' );
 
 /**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Implement the Custom Menu feature.
+ */
+require get_template_directory() . '/inc/custom-menu.php';
+
+/**
+ * Implement the Breadcrumb.
+ */
+require get_template_directory() . '/inc/breadcrumb.php';
+
+/**
+ * Implement the Related Posts.
+ */
+require get_template_directory() . '/inc/related-posts.php';
+
+/**
+ * Implement the Type Post Receitas.
+ */
+require get_template_directory() . '/inc/receitas-type-post.php';
 
 
 /**
