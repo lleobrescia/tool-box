@@ -48,9 +48,9 @@ function custom_post_receitas()
     register_post_type( 'receita', $args );
 }
 
-add_action( 'init', 'chris_create_categoria_cat' );
+add_action( 'init', 'create_categoria_cat' );
 
-function chris_create_categoria_cat()
+function create_categoria_cat()
 {
     register_taxonomy(
         'categoria',

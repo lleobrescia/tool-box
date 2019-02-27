@@ -40,7 +40,12 @@ get_header();
         </div> <!-- col-12 -->
       </div> <!-- row -->
 
-      <?php tool_box_related_posts(); ?>
+      <?php
+        if(get_post_type( get_the_ID() )=== 'receita')
+          tool_box_related_posts(true);
+        else
+          tool_box_related_posts(false);
+      ?>
 
       <section class="row">
         <div class="comentarios">
