@@ -18,7 +18,13 @@ function tool_box_breadcrumb() {
   echo '</a></li><li class="post-path__separador"> / </li>';
   if (is_category() || is_single()) {
       echo '<li>';
-      the_category(' </li><li class="post-path__separador"> / </li><li> ');
+      if(get_post_type( get_the_ID() ) === 'receita'){
+        echo '<a href="'.get_site_url(null, '/receita/').'">Receitas</a>';
+        echo ' </li><li> ';
+      }else{
+        the_category(' </li><li class="post-path__separador"> / </li><li> ');
+      }
+
       if (is_single()) {
           echo '</li><li class="post-path__separador"> / </li><li>';
           the_title();
