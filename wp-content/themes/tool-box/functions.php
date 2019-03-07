@@ -121,6 +121,12 @@ require get_template_directory() . '/inc/related-posts.php';
  */
 require get_template_directory() . '/inc/receitas-type-post.php';
 
+/**
+ * Implement Options Page.
+ */
+require get_template_directory() . '/inc/options-page.php';
+
+
 
 /**
  * Load Jetpack compatibility file.
@@ -128,4 +134,3 @@ require get_template_directory() . '/inc/receitas-type-post.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
