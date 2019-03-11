@@ -47,11 +47,12 @@
     // Fixed header
     window.addEventListener("scroll", function(event) {
       var top = this.scrollY;
-
-      if(top >=286){
+      if(top >=360){
         jQuery(".top--desktop").addClass('top--fixed');
-      }else if(top < 286){
+        jQuery("body").css('padding-top', '316px');
+      }else if(top < 277){
         jQuery(".top--desktop").removeClass('top--fixed');
+        jQuery("body").css('padding-top', '0');
       }
 
     }, false);
