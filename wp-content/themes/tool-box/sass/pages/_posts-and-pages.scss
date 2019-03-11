@@ -49,3 +49,14 @@
     @include font-size(36);
   }
 }
+
+.not-found{
+  &__title{
+    color: black;
+    font-weight: 100;
+    margin-bottom: 70px;
+    margin-top: 40px;
+    text-align: center;
+    @include font-size(36);
+  }
+}
