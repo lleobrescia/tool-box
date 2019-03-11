@@ -36,13 +36,26 @@
 <body <?php body_class(); ?>>
   <script>
   jQuery(document).ready(function() {
+    //Menu mobile
     jQuery("#button-menu-mobile").on("click", function() {
       jQuery("body").addClass("sidebar-active");
     });
-
     jQuery("#close-sidebar-nav").on("click", function() {
       jQuery("body").removeClass("sidebar-active");
     });
+
+    // Fixed header
+    window.addEventListener("scroll", function(event) {
+      var top = this.scrollY
+      console.log(top);
+
+      if(top >=286){
+        jQuery(".top--desktop").addClass('top--fixed');
+      }else if(top < 286){
+        jQuery(".top--desktop").removeClass('top--fixed');
+      }
+
+    }, false);
   });
   </script>
   <div id="close-sidebar-nav" class="close-sidebar-nav"></div>
@@ -107,9 +120,9 @@
 
           <div class="col-12 menu">
             <?php
-              tool_box_custom_menu('menu-1', 'navbar');
-              get_search_form();
-            ?>
+                        tool_box_custom_menu('menu-1', 'navbar');
+                        get_search_form();
+                        ?>
           </div> <!-- menu -->
 
         </section> <!-- top--desktop -->
