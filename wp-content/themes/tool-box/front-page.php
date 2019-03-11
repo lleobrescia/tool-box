@@ -23,14 +23,23 @@ $banner = wp_get_attachment_image($banner_obj['id'], 'full');
 <div id="content" class="site-content home">
   <section class="home__banner d-none d-md-block">
     <?php if($banner_link): ?>
-      <a href="<?= $banner_link; ?>">
-    <?php endif; ?>
+    <a href="<?= $banner_link; ?>">
+      <?php endif; ?>
       <?= $banner; ?>
-    <?php if($banner_link): ?>
-      </a>
+      <?php if($banner_link): ?>
+    </a>
     <?php endif; ?>
   </section>
   <?php
+    // Receitas
+    query_posts(array(
+      'post_type'       => 'receita',
+      'posts_per_page'  => 3
+    ));
+    include(locate_template('template-parts/post-list-receitas.php', false, false));
+    wp_reset_query();
+
+
     foreach ($categories as $category) {
       query_posts(array(
         'category_name' => $category->slug,
