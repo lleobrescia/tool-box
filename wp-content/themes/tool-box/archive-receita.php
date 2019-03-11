@@ -8,6 +8,8 @@
  */
 
 get_header();
+$category = get_the_terms($post->ID, 'categoria');
+$banner   = get_field("banner", "category_" . $category[0]->term_id);
 ?>
 
 <div id="primary" class="content-area receitas">
