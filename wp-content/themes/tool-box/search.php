@@ -10,46 +10,31 @@
 get_header();
 ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+<section id="primary" class="content-area">
+  <main id="main" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
+    <div class="container">
+      <div class="post-path">
+        <hr>
+      </div><!-- breadcrumb -->
+      <?php if (have_posts()) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'tool-box' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+      <header class="page-header">
+        <h1 class="search__title">
+          <?php
+          /* translators: %s: search query. */
+          printf(esc_html__('Resultados da busca para: %s', 'tool-box'), '<span>' . get_search_query() . '</span>');
+            ?>
+        </h1>
+      </header><!-- .page-header -->
+      <div class="row">
+        <?= do_shortcode('[ajax_load_more scroll="false" button_label="mais postagens" button_loading_label="Carregando..." post_type="post, receita" posts_per_page="9" search="'.get_search_query().'"]'); ?>
+      </div> <!-- row -->
+      <?php endif; ?>
+    </div> <!-- container -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+  </main><!-- #main -->
+</section><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
