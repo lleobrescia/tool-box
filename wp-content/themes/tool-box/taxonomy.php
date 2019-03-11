@@ -8,7 +8,14 @@
  */
 
 get_header();
-$category = get_the_category();
+$category = null;
+
+if(get_post_type( get_the_ID() )=== 'receita'){
+  $category = get_the_terms($post->ID, 'categoria');
+}else{
+  $category = get_the_category();
+}
+
 $banner   = get_field("banner", "category_" . $category[0]->term_id);
 ?>
 
