@@ -29,20 +29,9 @@ $banner   = get_field("banner", "category_" . $category[0]->term_id);
   <main id="main" class="site-main">
     <div class="container">
       <div class="row">
-        <?php if ( have_posts() ) : ?>
-        <?php
-          while ( have_posts() ) :
-            the_post();
-        ?>
-        <div class="col-sm-6 col-md-4">
-          <?php  tool_box_post_preview(get_the_title(), get_the_permalink(), get_the_post_thumbnail()); ?>
-        </div>
-        <?php
-          endwhile;
-          endif;
-          ?>
-      </div>
-    </div>
+        <?= do_shortcode('[ajax_load_more post_type="receita" posts_per_page="9" scroll="false" button_label="mais postagens" button_loading_label="Carregando..." taxonomy="categoria" taxonomy_terms="'.$category[0]->slug.'" taxonomy_operator="IN"] '); ?>
+      </div> <!-- row -->
+    </div> <!-- container -->
   </main><!-- #main -->
 
   <?php get_template_part( 'template-parts/content', 'newsletter' ); ?>
