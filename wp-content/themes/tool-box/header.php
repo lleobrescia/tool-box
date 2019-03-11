@@ -46,8 +46,7 @@
 
     // Fixed header
     window.addEventListener("scroll", function(event) {
-      var top = this.scrollY
-      console.log(top);
+      var top = this.scrollY;
 
       if(top >=286){
         jQuery(".top--desktop").addClass('top--fixed');
