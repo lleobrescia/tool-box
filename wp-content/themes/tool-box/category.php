@@ -8,17 +8,12 @@
  */
 
 get_header();
-$category = get_the_category();
-$banner   = get_field("banner", "category_" . $category[0]->term_id);
 ?>
 
 <div id="primary" class="content-area categoria">
-  <header class="categoria__banner">
-    <h1 class="categoria__title"><?= $category[0]->name ?></h1>
-    <figure>
-      <img src="<?= $banner['url'] ?>" alt="<?= $category[0]->name ?>">
-    </figure>
-  </header>
+  <?php
+    include(locate_template('template-parts/post-list-header.php', false, false));
+  ?>
   <main id="main" class="site-main">
     <div class="container">
       <div class="row">

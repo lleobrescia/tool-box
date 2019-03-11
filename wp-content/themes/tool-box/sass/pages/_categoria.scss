@@ -5,23 +5,71 @@
 
   &__banner {
     position: relative;
+    margin-bottom: 25px;
+    height: 227px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    figure {
-      margin-bottom: 25px;
+    @media (min-width: 600px) {
+      height: 191px;
     }
   }
 
   &__title {
-    bottom: 37px;
     color: white;
     font-weight: 100;
-    left: 0;
     letter-spacing: 5px;
     margin: 0;
-    position: absolute;
-    right: 0;
     text-align: center;
     text-transform: uppercase;
     @include font-size(36);
+  }
+}
+
+.title-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__hr {
+    flex-grow: 1;
+    width: 20%;
+    display: none;
+
+    @media (min-width: 480px) {
+      display: block;
+    }
+
+    @media (min-width: 770px) {
+      width: 30%;
+    }
+
+    hr {
+      max-width: 412px;
+      width: 80%;
+      margin: 0;
+      border-top: 2px solid #ffffff;
+    }
+  }
+
+  .categoria__title {
+
+    @media (min-width: 480px) {
+      flex-grow: 1;
+      width: 60%;
+    }
+
+    @media (min-width: 770px) {
+      flex-grow: 1;
+      width: 40%;
+    }
   }
 }

@@ -8,16 +8,23 @@
  */
 
 get_header();
-$category = get_the_category();
-$banner   = get_field("banner", "category_" . $category[0]->term_id);
 ?>
 
 <div id="primary" class="content-area receitas">
-  <header class="receitas__banner">
-    <h1 class="receitas__title"><?= $category[0]->name ?></h1>
-    <figure>
-      <img src="<?= $banner['url'] ?>" alt="<?= $category[0]->name ?>">
-    </figure>
+  <header class="categoria__banner" style="background-image: url('<?= $banner['url'] ?>')">
+    <div class="title-wrapper">
+      <div class="title-wrapper__hr">
+        <hr class="float-right">
+      </div>
+
+      <h1 class="categoria__title">
+        Receitas
+      </h1>
+
+      <div class="title-wrapper__hr">
+        <hr>
+      </div>
+    </div> <!-- title-wrapper -->
   </header>
   <main id="main" class="site-main">
     <div class="container">
