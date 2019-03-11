@@ -49,7 +49,7 @@ get_header();
 
       <section class="row">
         <div class="comentarios">
-          <div class="fb-comments" data-href="<?= esc_url(get_the_permalink()); ?>" data-numposts="5"></div>
+          <div class="fb-comments" data-width="100%" data-href="<?= esc_url(get_the_permalink()); ?>" data-numposts="5"></div>
         </div> <!-- comentarios -->
       </section> <!-- row -->
 
