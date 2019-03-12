@@ -22,6 +22,17 @@ get_header();
     </div> <!-- container -->
   </main><!-- #main -->
 
+  <?php if($category[0]->slug === 'casamento'): ?>
+  <?php $casamento = get_field('categoria_casamento', 'option'); ?>
+  <div class="row" style="text-align: center;padding-bottom: 70px;padding-top: 70px;">
+    <div class="col-12">
+      <a href="<?= $casamento['link_para_a_lista_de_casamento']; ?>" target="_blank" rel="noopener noreferrer">
+        <img src="<?= $casamento['banner_lista_de_casamento']['url']; ?>" alt="">
+      </a>
+    </div>
+  </div>
+  <?php endif; ?>
+
   <?php get_template_part( 'template-parts/content', 'newsletter' ); ?>
 </div><!-- #primary -->
 
