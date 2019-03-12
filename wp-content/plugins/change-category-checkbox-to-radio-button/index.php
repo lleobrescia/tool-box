@@ -10,7 +10,7 @@
 /*Change category type check box to radio button in WordPress function.*/
 
 function cb_change_cat_type(){
-  echo '<script type="text/javascript">jQuery("#categorychecklist input, #categorychecklist-pop input, .cat-checklist input, #categoriachecklist input").each(function(){this.type="radio"});</script>';
+  echo '<script type="text/javascript">jQuery(".post-type-post #categorychecklist input, .post-type-receita #categoriachecklist input").each(function(){this.type="radio"});</script>';
 }
 add_action( 'admin_footer', 'cb_change_cat_type' );
 
