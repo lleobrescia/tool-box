@@ -51,8 +51,8 @@
     </div> <!-- row -->
 
     <a href="http://joaquimrodrigues.com.br/" target="_blank" rel="noopener noreferrer" title="Joaquim Rodriguês" class="float-right">
-      <img class="site-footer__logo" src="<?= get_stylesheet_directory_uri(); ?>/images/joaquim_rodrigues.png"
-        alt="Joaquim Rodriguês">
+      <img src="<?= get_stylesheet_directory_uri(); ?>/images/joaquim_rodrigues.png"
+        alt="Joaquim Rodriguês" style="margin: 10px 0;max-width: 34px;">
     </a>
   </div> <!-- container -->
 </footer><!-- #colophon -->
