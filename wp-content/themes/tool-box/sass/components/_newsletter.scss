@@ -139,6 +139,7 @@
       padding: 16px 32px;
       @include font-size(20);
       border: none !important;
+      box-shadow: none !important;
 
       @media (max-width: 767px) {
         display: inline-block;
