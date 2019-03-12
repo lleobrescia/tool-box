@@ -48,7 +48,7 @@ function tool_box_related_posts($is_eceita)
         $my_query->the_post();
         ?>
 
-<div class="related-posts__single col-4">
+<div class="related-posts__single col-sm-6 col-lg-4">
   <?php tool_box_post_preview(get_the_title(), get_the_permalink(), get_the_post_thumbnail()); ?>
 </div><!-- related-posts__single -->
 <?php
