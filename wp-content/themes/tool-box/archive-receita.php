@@ -8,12 +8,10 @@
  */
 
 get_header();
-$category = get_the_terms($post->ID, 'categoria');
-$banner   = get_field("banner", "category_" . $category[0]->term_id);
 ?>
 
 <div id="primary" class="content-area receitas">
-  <header class="categoria__banner" style="background-image: url('<?= $banner['url'] ?>')">
+  <header class="categoria__banner" style="background-image: url('<?= get_receita_banner() ?>')">
     <div class="title-wrapper">
       <div class="title-wrapper__hr">
         <hr class="float-right">
