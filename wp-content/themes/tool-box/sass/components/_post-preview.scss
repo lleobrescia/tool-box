@@ -14,23 +14,10 @@
     overflow: hidden;
     position: relative;
 
-    &::before {
-      background-color: rgba(0, 0, 0, 0.7);
-      content: "";
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 1;
-      opacity: 0;
-      transition: all .2s ease-in-out;
-    }
-
     img {
       height: 233px;
       object-fit: cover;
-      transition: all .2s ease-in-out;
+      transition: all .5s ease-in-out;
       width: 350px;
     }
   }
