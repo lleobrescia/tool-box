@@ -113,6 +113,11 @@
     padding-top: 30px;
     position: relative;
 
+    @media (max-width: 399px) {
+      margin-bottom: 55px;
+      padding-top: 83px;
+    }
+
     .menu-icon {
       cursor: pointer;
       padding-top: 30px;
@@ -127,6 +132,10 @@
       right: 0;
       top: 30px;
 
+      @media (max-width: 399px) {
+        top: 70px;
+      }
+
       img {
         width: 125px;
       }
@@ -134,11 +143,24 @@
 
     .icons-mobile {
       padding-top: 30px;
+
+      @media (max-width: 399px) {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
     }
 
     &__links {
       margin-top: 17px;
       text-align: right;
+
+      @media (max-width: 399px) {
+        margin-top: 0;
+        margin-left: 20px;
+      }
 
       a {
         color: black !important;
@@ -146,6 +168,11 @@
         font-weight: 300;
         text-transform: uppercase;
         @include font-size(12);
+
+        @media (max-width: 399px) {
+          display: inline-block;
+          margin-left: 10px;
+        }
       }
 
     }
