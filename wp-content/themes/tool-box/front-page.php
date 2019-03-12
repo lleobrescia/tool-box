@@ -77,7 +77,8 @@ function slider(width) {
       minSlides: 1,
       maxSlides: 1,
       shrinkItems: true,
-      mode: 'fade'
+      touchEnabled:false,
+      auto: true
     });
   } else {
     window.sldr.destroySlider();
