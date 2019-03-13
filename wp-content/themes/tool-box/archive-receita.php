@@ -12,19 +12,6 @@ get_header();
 
 <div id="primary" class="content-area receitas">
   <header class="categoria__banner" style="background-image: url('<?= get_receita_banner() ?>')">
-    <div class="title-wrapper">
-      <div class="title-wrapper__hr">
-        <hr class="float-right">
-      </div>
-
-      <h1 class="categoria__title">
-        Receitas
-      </h1>
-
-      <div class="title-wrapper__hr">
-        <hr>
-      </div>
-    </div> <!-- title-wrapper -->
   </header>
   <main id="main" class="site-main">
     <div class="container">
