@@ -59,11 +59,18 @@ $banner = wp_get_attachment_image($banner_obj['id'], 'full');
 <script>
 jQuery(document).ready(function() {
   var width = jQuery(window).width();
+  slider(width);
+
   jQuery(window).resize(function() {
     var width = jQuery(window).width();
     slider(width);
   });
-  slider(width);
+
+  jQuery('.bxslider .col-md-4').on('click', function(){
+    var link = jQuery(this).attr('data-link');
+    location.href = link;
+  });
+
 });
 
 function slider(width) {
@@ -77,7 +84,6 @@ function slider(width) {
       minSlides: 1,
       maxSlides: 1,
       shrinkItems: true,
-      touchEnabled:false,
       auto: true
     });
   } else {

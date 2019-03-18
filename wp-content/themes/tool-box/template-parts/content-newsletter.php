@@ -45,19 +45,19 @@ jQuery(document).ready(function() {
 <section class="newsletter">
   <div class="container">
 
-    <dir class="row">
+    <div class="row">
       <div class="col-12">
         <h2 class="newsletter__title">
           INSCREVA-SE
           <span>para ter acesso exclusivo a</span>
         </h2>
       </div> <!-- col-12 -->
-    </dir> <!-- row -->
+    </div> <!-- row -->
 
     <div class="row newsletter__info">
       <div class="col-12 text-center">
         <h3 class="float-xl-right newsletter__sub-title">
-          descontos na loja <strong>+</strong> e-books exclusivos e gratuitos <br>
+        <span>para ter acesso exclusivo a</span> descontos na loja <strong>+</strong> e-books exclusivos e gratuitos <br>
           <strong>+</strong> promoções e vantagens
         </h3>
       </div> <!-- col-12 -->
@@ -71,7 +71,7 @@ jQuery(document).ready(function() {
           <input type="hidden" id="identificador" name="identificador" value="newsletter-44868c810a">
           <div class="form-group form-group--cidade">
             <select name="uf" id="uf" required class=" form-control form-control-lg">
-              <option value="">Estado</option>
+              <option value="">estado</option>
               <option value="AC">AC</option>
               <option value="AL">AL</option>
               <option value="AP">AP</option>

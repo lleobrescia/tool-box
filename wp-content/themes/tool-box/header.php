@@ -70,7 +70,7 @@
           <div class="top-icons">
             <ul class="top-icons__social">
               <li>
-                <a href="<?= get_social_link('facebook'); ?>" target="_blank" rel="noopener noreferrer">
+                <a href="<?= get_social_link('facebook'); ?>" target="_blank" rel="noopener noreferrer" title="<?php bloginfo('name'); ?> - Facebook">
                   <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-face.svg"
                     onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-face-hover.svg'"
                     onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-face.svg'"
@@ -78,7 +78,7 @@
                 </a>
               </li>
               <li>
-                <a href="<?= get_social_link('instagram'); ?>" target="_blank" rel="noopener noreferrer">
+                <a href="<?= get_social_link('instagram'); ?>" target="_blank" rel="noopener noreferrer" title="<?php bloginfo('name'); ?> - Instagram">
                   <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram.svg"
                     onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram-hover.svg'"
                     onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram.svg'"
@@ -86,7 +86,7 @@
                 </a>
               </li>
               <li>
-                <a href="<?= get_social_link('youtube'); ?>" target="_blank" rel="noopener noreferrer">
+                <a href="<?= get_social_link('youtube'); ?>" target="_blank" rel="noopener noreferrer" title="<?php bloginfo('name'); ?> - Youtube">
                   <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube.svg"
                     onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube-hover.svg'"
                     onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube.svg'"
@@ -94,7 +94,7 @@
                 </a>
               </li>
               <li>
-                <a href="<?= get_social_link('pinterest'); ?>" target="_blank" rel="noopener noreferrer">
+                <a href="<?= get_social_link('pinterest'); ?>" target="_blank" rel="noopener noreferrer" title="<?php bloginfo('name'); ?> - Pinterest">
                   <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest.svg"
                     onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest-hover.svg'"
                     onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest.svg'"
