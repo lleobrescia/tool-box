@@ -273,6 +273,7 @@
               display: block;
               @include font-size(12);
               padding: 4px 0 4px 0;
+              text-transform: capitalize;
             }
           }
         }

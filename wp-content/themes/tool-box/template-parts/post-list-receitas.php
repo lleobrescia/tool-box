@@ -12,7 +12,9 @@
 
     <div class="row">
       <div class="col-12">
-        <h2 class="post-list__title">Receitas</h2>
+        <h2 class="post-list__title">
+          <a href="<?php echo esc_url(home_url('/receita')); ?>">Receitas</a>
+        </h2>
       </div>
     </div>
 

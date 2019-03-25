@@ -38,7 +38,7 @@ function tool_box_custom_menu($theme_location, $menu_class)
         if ($bool == true && count($menu_array) > 0) {
 
           $menu_list .= '<li class="'.$menu_class.'-nav__item--dropdown '.$menu_class.'-nav__item">' . "\n";
-          $menu_list .= '<a href="' . $menu_item->url . '" class="dropdown-toggle '.$menu_class.'-nav__link" >' . $menu_item->title . ' <span class="caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span></a>' . "\n";
+          $menu_list .= '<a href="' . $menu_item->url . '" class=" '.$menu_class.'-nav__link" >' . $menu_item->title . '</a>' . "\n";
 
           $menu_list .= '<ul class="dropdown-menu">' . "\n";
           $menu_list .= implode("\n", $menu_array);

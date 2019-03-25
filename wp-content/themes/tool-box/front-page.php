@@ -83,8 +83,7 @@ function slider(width) {
       controls: false,
       minSlides: 1,
       maxSlides: 1,
-      shrinkItems: true,
-      auto: true
+      shrinkItems: true
     });
   } else {
     window.sldr.destroySlider();

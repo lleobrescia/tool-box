@@ -12,7 +12,9 @@
 
     <div class="row">
       <div class="col-12">
-        <h2 class="post-list__title"><?= $category->name; ?></h2>
+        <h2 class="post-list__title">
+          <a href="<?= $category_link; ?>"><?= $category->name; ?></a>
+        </h2>
       </div>
     </div>
 
