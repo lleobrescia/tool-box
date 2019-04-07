@@ -28,13 +28,19 @@ $tempo    = get_field('tempo');
         <?php elseif($nivel === 'Chef'): ?>
         <img src="<?= get_stylesheet_directory_uri(); ?>/images/ic-chef.png" alt="">
         <?php endif; ?>
-        <span><img src="<?= get_stylesheet_directory_uri(); ?>/images/ic-time.png" alt=""> <?= $tempo; ?></span>
+
+        <?php if($tempo ): ?>
+        <span>
+          <img src="<?= get_stylesheet_directory_uri(); ?>/images/ic-time.png" alt="Icone"> <?= $tempo; ?>
+        </span>
+        <?php endif; ?>
       </div>
 
       <div class="post__content">
         <?php the_content(); ?>
       </div>
 
+      <?php if($pdf_link): ?>
       <div class="text-center">
         <a class="single-receita__button" href="<?= $pdf_link; ?>" target="_blank" rel="noopener noreferrer">
           <img src="<?= get_stylesheet_directory_uri(); ?>/images/ic-print.png" alt="">
@@ -44,6 +50,7 @@ $tempo    = get_field('tempo');
           </span>
         </a>
       </div>
+      <?php endif; ?>
     </div> <!-- col-lg-8 -->
   </div> <!-- row -->
 </article><!-- #post-<?php the_ID(); ?> -->
