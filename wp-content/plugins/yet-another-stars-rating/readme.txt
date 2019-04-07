@@ -127,6 +127,10 @@ If doesn't, it's suggested to ask in a SEO oriented forum.
 
 The full changelog can be found in the plugin's directory. Recent entries:
 
+= 1.9.3 =
+* Minor changes and code cleanup.
+
+
 = 1.9.2 =
 * FIXED: Javascript error on some mobile device
 

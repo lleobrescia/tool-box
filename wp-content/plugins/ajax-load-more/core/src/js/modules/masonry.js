@@ -1,19 +1,20 @@
 import almFadeIn from './fadeIn';
 import almAppendChildren from '../helpers/almAppendChildren';
 import almDomParser from '../helpers/almDomParser';
+import srcsetPolyfill from '../helpers/srcsetPolyfill';
 let imagesLoaded = require('imagesloaded');
 
-/*
-	almMasonry
-	Function to trigger built-in Ajax Load More Masonry
-
-   @param {object} alm
-   @param {boolean} init
-   @param {boolean} filtering 
-   
-   @since 3.1
-   @updated 4.3
+/**
+ * almMasonry
+ * Function to trigger built-in Ajax Load More Masonry
+ * 
+ * @param {object} alm
+ * @param {boolean} init
+ * @param {boolean} filtering 
+ * @since 3.1
+ * @updated 5.0.2
 */
+
 let msnry = '';
 let almMasonry = (alm, init, filtering) => {	
 	
@@ -66,7 +67,9 @@ let almMasonry = (alm, init, filtering) => {
 	if(!filtering){
    	
 		// First Run
-		if(masonry_init && init){
+		if(masonry_init && init){			
+			
+			srcsetPolyfill(container, alm.ua); // Run srcSet polyfill			
 			
 			imagesLoaded( container, function() {
 				
@@ -93,11 +96,13 @@ let almMasonry = (alm, init, filtering) => {
 					});
 				}				
             
-            // Init Masonry
-            msnry = new Masonry( container, defaults );
+            // Init Masonry, delay to allow time for items to be added to the page
+            setTimeout(function(){
+            	msnry = new Masonry( container, defaults );
+            	// Fade In
+					almFadeIn(container.parentNode, speed); 
+            }, 100 );				
 				
-				// Fade In
-				almFadeIn(container.parentNode, speed); 
 				
 			});
 		}
@@ -105,23 +110,21 @@ let almMasonry = (alm, init, filtering) => {
 		// Standard / Append content
 		else{						
 						
-			// Loop all items and create new array
+			// Loop all items and create array of node elements
 			let data = almDomParser(html, 'text/html');
 			
-			if(data){
-   			
-   			// Loop elements to set opacity 0
-   			for(let i = 0; i < data.length; i++){
-      			data[i].style.opacity = 0;
-   			}   			
-   			
+			if(data){   	
+				
    			// Append elements listing
-   			almAppendChildren(alm.listing, data);
+   			almAppendChildren(alm.listing, data, 'masonry');
+   			
+   			srcsetPolyfill(container, alm.ua); // Run srcSet polyfill
    			
    			// Confirm imagesLoaded & append
    			imagesLoaded( container, function() {
 					msnry.appended( data );				
 				});
+				
 			}
 		}
 
@@ -137,3 +140,6 @@ let almMasonry = (alm, init, filtering) => {
 };
 
 export default almMasonry;
+
+
+
