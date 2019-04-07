@@ -9,9 +9,22 @@
 
 get_header();
 ?>
+<style>
+.categoria__banner {
+  background-image: url('<?= get_receita_banner(true) ?>');
+  height: 191px;
+}
 
+@media (min-width: 481px) {
+  .categoria__banner {
+    background-image: url('<?= get_receita_banner() ?>');
+    height: 227px;
+  }
+}
+</style>
 <div id="primary" class="content-area receitas">
-  <header class="categoria__banner" style="background-image: url('<?= get_receita_banner() ?>')">
+  <header class="categoria__banner">
+  <h1 class="categoria__title">Receitas</h1>
   </header>
   <main id="main" class="site-main">
     <div class="container">

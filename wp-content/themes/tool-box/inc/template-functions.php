@@ -78,8 +78,12 @@ function get_loja_link() {
   return $page['link_loja_virtual'];
 }
 
-function get_receita_banner() {
+function get_receita_banner($isMobile = false) {
   $page = get_field('receitas', 'option');
+
+  if($isMobile){
+    return $page['banner_receitas_mobile']['url'];
+  }
 
   return $page['banner_receitas']['url'];
 }
