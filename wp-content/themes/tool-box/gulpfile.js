@@ -18,7 +18,7 @@ var phpSRC            = './**/*.php'; // Path to all PHP files
 var imagesSRC         = './images/**/*'; // Path to all images files
 var imagesDestination = dist + '/images'; // Path to images destination
 
-var filesDestination  = ['./screenshot.png', './languages/**/*', './js/**/*'] // Files to copy to destination folder
+var filesDestination  = ['./screenshot.png', './languages/*', './js/**/*'] // Files to copy to destination folder
 
 
 /**

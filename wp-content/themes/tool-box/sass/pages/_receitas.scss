@@ -54,8 +54,10 @@
       left: 0;
       right: 0;
 
-      &:hover+.receitas-single__title+figure img {
-        transform: scale(1.3);
+      @media (min-width: 769px) {
+        &:hover+.receitas-single__title+figure img {
+          transform: scale(1.2);
+        }
       }
     }
   }

@@ -11,6 +11,9 @@ get_header();
 ?>
 
 <div id="primary" class="content-area categoria">
+  <div class="post-path">
+    <hr>
+  </div><!-- breadcrumb -->
   <?php
     include(locate_template('template-parts/post-list-header.php', false, false));
   ?>

@@ -8,7 +8,7 @@
  */
 ?>
 
-<form class="form-inline search-form" action="/" method="get" accept-charset="utf-8" id="searchform" role="search">
+<form class="form-inline search-form" action="<?php echo esc_url(home_url('/')); ?>" method="get" accept-charset="utf-8" id="searchform" role="search">
 
   <div class="input-group">
     <input class="form-control search-form__input" type="text" name="s" id="s" placeholder="Busca _"

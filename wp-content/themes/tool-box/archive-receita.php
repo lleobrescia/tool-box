@@ -18,9 +18,7 @@ get_header();
       <div class="row">
         <?php
           $args = array(
-            'taxonomy'  => 'categoria',
-            'orderby'   => 'name',
-            'order'     => 'ASC'
+            'taxonomy'  => 'categoria'
           );
 
           $cats = get_categories($args);

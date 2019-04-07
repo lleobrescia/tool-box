@@ -9,7 +9,7 @@
 $category = null;
 
 if(get_post_type( get_the_ID() )=== 'receita'){
-  $category = get_the_terms($post->ID, 'categoria');
+  $category = null;
 }else{
   $category = get_the_category();
 }

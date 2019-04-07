@@ -34,7 +34,7 @@ $banner = wp_get_attachment_image($banner_obj['id'], 'full');
     // Receitas
     query_posts(array(
       'post_type'       => 'receita',
-      'posts_per_page'  => 3
+      'posts_per_page'  => 6
     ));
     include(locate_template('template-parts/post-list-receitas.php', false, false));
     wp_reset_query();
@@ -43,7 +43,7 @@ $banner = wp_get_attachment_image($banner_obj['id'], 'full');
     foreach ($categories as $category) {
       query_posts(array(
         'category_name' => $category->slug,
-        'posts_per_page' => 3
+        'posts_per_page' => 6
       ));
 
       include(locate_template('template-parts/post-list.php', false, false));
@@ -57,28 +57,33 @@ $banner = wp_get_attachment_image($banner_obj['id'], 'full');
 
 </div><!-- #content -->
 <script>
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
   var width = jQuery(window).width();
-  jQuery(window).resize(function() {
+  slider(width);
+  jQuery(window).resize(function () {
     var width = jQuery(window).width();
     slider(width);
   });
-  slider(width);
+  jQuery('.bxslider .col-md-4').on('click', function () {
+    var link = jQuery(this).attr('data-link');
+    location.href = link;
+  });
 });
 
 function slider(width) {
   if (width <= 768) {
     if (window.sldr) {
-      window.sldr.destroySlider();
+      try {
+        window.sldr.destroySlider();
+      } catch (error) {}
     }
     window.sldr = jQuery('.bxslider').bxSlider({
       preloadImages: 'all',
-      controls: false,
+      controls: true,
       minSlides: 1,
       maxSlides: 1,
       shrinkItems: true,
-      touchEnabled:false,
-      auto: true
+      touchEnabled: false
     });
   } else {
     window.sldr.destroySlider();

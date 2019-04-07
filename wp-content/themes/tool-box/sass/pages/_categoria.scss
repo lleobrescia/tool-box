@@ -6,13 +6,13 @@
   &__banner {
     position: relative;
     margin-bottom: 25px;
-    height: 227px;
+    height: 191px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
     @media (min-width: 600px) {
-      height: 191px;
+      height: 227px;
     }
   }
 
