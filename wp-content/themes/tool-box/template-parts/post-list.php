@@ -6,6 +6,7 @@
  * @package Tool_Box
  */
 
+$category_link = get_category_link($category->term_id);
 ?>
 <div class="post-list">
   <div class="container">
@@ -30,7 +31,7 @@
       <div class="col-12">
         <div class="see-more text-right">
           <hr class="see-more__hr">
-          <?php $category_link = get_category_link($category->term_id); ?>
+
           <a href="<?= $category_link; ?>" class="see-more__link">ver mais <?= strtolower($category->name); ?> &#62;</a>
         </div> <!-- see-more -->
       </div> <!-- col-12 -->
