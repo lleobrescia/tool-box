@@ -81,7 +81,7 @@ add_action( 'after_setup_theme', 'tool_box_setup' );
 function tool_box_scripts() {
   wp_enqueue_style('bxslider-css', 'https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css');
 
-  wp_enqueue_style( 'tool-box-style', get_stylesheet_uri(), array('bxslider-css') );
+  wp_enqueue_style( 'tool-box-style', get_stylesheet_uri(), array('bxslider-css'), '20151227' );
 
   wp_enqueue_script('bxslider-js', 'https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js', array('jquery'), '20151215', true);
 
@@ -121,6 +121,12 @@ require get_template_directory() . '/inc/related-posts.php';
  */
 require get_template_directory() . '/inc/receitas-type-post.php';
 
+/**
+ * Implement Options Page.
+ */
+require get_template_directory() . '/inc/options-page.php';
+
+
 
 /**
  * Load Jetpack compatibility file.
@@ -128,4 +134,3 @@ require get_template_directory() . '/inc/receitas-type-post.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

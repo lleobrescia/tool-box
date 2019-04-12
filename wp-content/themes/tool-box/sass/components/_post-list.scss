@@ -1,6 +1,5 @@
 .post-list {
   background-color: white;
-
   padding-bottom: 68px;
   @extend %site-wrapper;
 
@@ -8,7 +7,18 @@
     font-size: 3.000rem;
     font-weight: 100;
     margin-bottom: 30px;
+    text-transform: uppercase;
     text-align: center;
+
+    a {
+      text-decoration: none;
+      color: #000;
+
+      &:hover {
+        text-decoration: none;
+        color: #000;
+      }
+    }
   }
 }
 
@@ -25,10 +35,36 @@
   &__link {
     background: white;
     color: black;
-    font-weight: 100;
+    font-weight: 300;
     margin-right: 55px;
+    letter-spacing: 1px;
     padding: 0 16px;
     position: relative;
     z-index: 2;
+  }
+}
+
+.bx-wrapper {
+  .bx-controls-direction a {
+    margin-top: -50px;
+  }
+}
+
+.bx-wrapper .bx-prev {
+  left: -10px;
+}
+
+.bx-wrapper .bx-next {
+  right: -10px;
+}
+
+.bxslider {
+  @media (min-width: 767px) {
+
+    .col-md-4:nth-child(4),
+    .col-md-4:nth-child(5),
+    .col-md-4:nth-child(6) {
+      display: none;
+    }
   }
 }

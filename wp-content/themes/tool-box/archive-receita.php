@@ -8,25 +8,30 @@
  */
 
 get_header();
-$category = get_the_category();
-$banner   = get_field("banner", "category_" . $category[0]->term_id);
 ?>
+<style>
+.categoria__banner {
+  background-image: url('<?= get_receita_banner(true) ?>');
+  height: 191px;
+}
 
+@media (min-width: 481px) {
+  .categoria__banner {
+    background-image: url('<?= get_receita_banner() ?>');
+    height: 227px;
+  }
+}
+</style>
 <div id="primary" class="content-area receitas">
-  <header class="receitas__banner">
-    <h1 class="receitas__title"><?= $category[0]->name ?></h1>
-    <figure>
-      <img src="<?= $banner['url'] ?>" alt="<?= $category[0]->name ?>">
-    </figure>
+  <header class="categoria__banner">
+  <h1 class="categoria__title">Receitas</h1>
   </header>
   <main id="main" class="site-main">
     <div class="container">
       <div class="row">
         <?php
           $args = array(
-            'taxonomy'  => 'categoria',
-            'orderby'   => 'name',
-            'order'     => 'ASC'
+            'taxonomy'  => 'categoria'
           );
 
           $cats = get_categories($args);

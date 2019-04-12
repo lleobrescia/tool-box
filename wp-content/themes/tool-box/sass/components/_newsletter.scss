@@ -1,11 +1,10 @@
 .newsletter {
-  margin-top: -14px;
   padding-bottom: 53px;
   @extend %site-wrapper;
 
   &__title {
     color: white;
-    padding-left: 70px;
+    text-align: center;
     padding-top: 21px;
     position: relative;
     text-transform: uppercase;
@@ -14,6 +13,8 @@
 
     @media (min-width: 555px) {
       @include font-size(24);
+      padding-left: 70px;
+      text-align: left;
     }
 
     &::before {
@@ -26,6 +27,11 @@
       top: 0;
       width: 288px;
       z-index: -1;
+
+      @media (max-width: 514px) {
+        right: 0;
+        margin: auto
+      }
     }
 
     span {
@@ -36,10 +42,8 @@
       top: -2px;
       @include font-size(16);
 
-      @media (max-width: 498px) {
-        display: block;
-        margin-left: 5px;
-        position: initial;
+      @media (max-width: 514px) {
+        display: none;
       }
 
       @media (min-width: 555px) {
@@ -53,6 +57,15 @@
     font-weight: 100;
     line-height: 21px;
     @include font-size(21);
+    margin-top: 20px;
+
+    span {
+      display: inline-block;
+
+      @media (min-width: 515px) {
+        display: none;
+      }
+    }
 
     @media (min-width: 991px) {
       line-height: 36px;
@@ -80,7 +93,7 @@
       &--cidade {
         max-width: 100%;
 
-        @media (min-width: 513px) {
+        @media (min-width: 515px) {
           max-width: 156px;
         }
 
@@ -92,7 +105,7 @@
       &--email {
         max-width: 100%;
 
-        @media (min-width: 513px) {
+        @media (min-width: 515px) {
           max-width: 315px;
         }
 
@@ -123,10 +136,27 @@
         color: white;
       }
 
-      &::-webkit-input-placeholder,
-      &::-moz-placeholder,
-      &:-ms-input-placeholder,
+      &::-webkit-input-placeholder {
+        color: white;
+        @include font-size(18);
+      }
+
+      &::-moz-placeholder {
+        color: white;
+        @include font-size(18);
+      }
+
+      &:-ms-input-placeholder {
+        color: white;
+        @include font-size(18);
+      }
+
       &:-moz-placeholder {
+        color: white;
+        @include font-size(18);
+      }
+
+      &::placeholder {
         color: white;
         @include font-size(18);
       }
@@ -134,10 +164,17 @@
 
     .btn {
       background-color: $gray-600;
+      min-height: 67px;
       font-weight: 400;
       line-height: 17px;
       padding: 16px 32px;
       @include font-size(20);
+      border: none !important;
+      box-shadow: none !important;
+
+      &:hover {
+        background-color: black;
+      }
 
       @media (max-width: 767px) {
         display: inline-block;

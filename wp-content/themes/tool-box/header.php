@@ -36,13 +36,26 @@
 <body <?php body_class(); ?>>
   <script>
   jQuery(document).ready(function() {
+    //Menu mobile
     jQuery("#button-menu-mobile").on("click", function() {
       jQuery("body").addClass("sidebar-active");
     });
-
     jQuery("#close-sidebar-nav").on("click", function() {
       jQuery("body").removeClass("sidebar-active");
     });
+
+    // Fixed header
+    window.addEventListener("scroll", function(event) {
+      var top = this.scrollY;
+      if(top >=360){
+        jQuery(".top--desktop").addClass('top--fixed');
+        jQuery("body").css('padding-top', '316px');
+      }else if(top < 277){
+        jQuery(".top--desktop").removeClass('top--fixed');
+        jQuery("body").css('padding-top', '0');
+      }
+
+    }, false);
   });
   </script>
   <div id="close-sidebar-nav" class="close-sidebar-nav"></div>
@@ -57,7 +70,7 @@
           <div class="top-icons">
             <ul class="top-icons__social">
               <li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
+                <a href="<?= get_social_link('facebook'); ?>" target="_blank" rel="noopener noreferrer" title="<?php bloginfo('name'); ?> - Facebook">
                   <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-face.svg"
                     onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-face-hover.svg'"
                     onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-face.svg'"
@@ -65,7 +78,7 @@
                 </a>
               </li>
               <li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
+                <a href="<?= get_social_link('instagram'); ?>" target="_blank" rel="noopener noreferrer" title="<?php bloginfo('name'); ?> - Instagram">
                   <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram.svg"
                     onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram-hover.svg'"
                     onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram.svg'"
@@ -73,7 +86,7 @@
                 </a>
               </li>
               <li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
+                <a href="<?= get_social_link('youtube'); ?>" target="_blank" rel="noopener noreferrer" title="<?php bloginfo('name'); ?> - Youtube">
                   <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube.svg"
                     onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube-hover.svg'"
                     onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube.svg'"
@@ -81,7 +94,7 @@
                 </a>
               </li>
               <li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
+                <a href="<?= get_social_link('pinterest'); ?>" target="_blank" rel="noopener noreferrer" title="<?php bloginfo('name'); ?> - Pinterest">
                   <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest.svg"
                     onmouseover="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest-hover.svg'"
                     onmouseout="this.src='<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest.svg'"
@@ -91,9 +104,9 @@
             </ul>
 
             <div class="top-icons__links">
-              <a href="">Quem somos</a>
+              <a href="<?= get_quem_somos_page(); ?>">Quem somos</a>
               <span>/</span>
-              <a href="">Contato</a>
+              <a href="<?= get_contato_page(); ?>">Contato</a>
             </div> <!-- top-icons__links -->
 
           </div> <!-- top-icons -->
@@ -107,9 +120,9 @@
 
           <div class="col-12 menu">
             <?php
-              tool_box_custom_menu('menu-1', 'navbar');
-              get_search_form();
-            ?>
+                        tool_box_custom_menu('menu-1', 'navbar');
+                        get_search_form();
+                        ?>
           </div> <!-- menu -->
 
         </section> <!-- top--desktop -->
@@ -129,25 +142,25 @@
               <div class="icons-mobile">
                 <ul class="top-icons__social">
                   <li>
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                    <a href="<?= get_social_link('facebook'); ?>" target="_blank" rel="noopener noreferrer">
                       <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-face-white.svg"
                         alt="<?php bloginfo('name'); ?> - Facebook">
                     </a>
                   </li>
                   <li>
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                    <a href="<?= get_social_link('instagram'); ?>" target="_blank" rel="noopener noreferrer">
                       <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-instagram-white.svg"
                         alt="<?php bloginfo('name'); ?> - Instagram">
                     </a>
                   </li>
                   <li>
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                    <a href="<?= get_social_link('youtube'); ?>" target="_blank" rel="noopener noreferrer">
                       <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-youtube-white.svg"
                         alt="<?php bloginfo('name'); ?> - Youtube">
                     </a>
                   </li>
                   <li>
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                    <a href="<?= get_social_link('pinterest'); ?>" target="_blank" rel="noopener noreferrer">
                       <img class="logo__img" src="<?= get_stylesheet_directory_uri(); ?>/images/ic-pinterest-white.svg"
                         alt="<?php bloginfo('name'); ?> - Pinterest">
                     </a>
@@ -155,8 +168,8 @@
                 </ul>
 
                 <div class="mobile-header__links">
-                  <a href="">Quem somos</a>
-                  <a href="">Contato</a>
+                  <a href="<?= get_quem_somos_page(); ?>">Quem somos</a>
+                  <a href="<?= get_contato_page(); ?>">Contato</a>
                 </div> <!-- mobile-header__links -->
 
               </div> <!-- icons-mobile -->

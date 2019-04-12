@@ -8,34 +8,41 @@
  */
 
 get_header();
-$category = get_the_category();
-$banner   = get_field("banner", "category_" . $category[0]->term_id);
+
+$termid = get_queried_object()->term_id;
+$term = get_term( $termid, 'categoria' );
 ?>
 
 <div id="primary" class="content-area categoria">
-  <header class="categoria__banner">
-    <h1 class="categoria__title"><?= $category[0]->name ?></h1>
-    <figure>
-      <img src="<?= $banner['url'] ?>" alt="<?= $category[0]->name ?>">
-    </figure>
-  </header>
+
+  <?php
+    include(locate_template('template-parts/post-list-header.php', false, false));
+  ?>
   <main id="main" class="site-main">
     <div class="container">
       <div class="row">
-        <?php if ( have_posts() ) : ?>
-        <?php
-          while ( have_posts() ) :
-            the_post();
-        ?>
-        <div class="col-sm-6 col-md-4">
-          <?php  tool_box_post_preview(get_the_title(), get_the_permalink(), get_the_post_thumbnail()); ?>
+        <div class="col">
+        <div class="post-path">
+          <hr>
+          <ul>
+            <li>
+              <a href="http://localhost/tool-box">Tool Box</a>
+            </li>
+            <li class="post-path__separador"> / </li>
+            <li>
+              <a href="<?= get_site_url(null, '/receita/'); ?>">Receitas</a>
+            </li>
+
+            <li class="post-path__separador"> / </li>
+            <li><?= $term->name ?></li>
+          </ul>
+        </div><!-- breadcrumb -->
         </div>
-        <?php
-          endwhile;
-          endif;
-          ?>
       </div>
-    </div>
+      <div class="row">
+        <?= do_shortcode('[ajax_load_more post_type="receita" posts_per_page="9" scroll="false" button_label="mais postagens" button_loading_label="Carregando..." taxonomy="categoria" taxonomy_terms="'.$category[0]->slug.'" taxonomy_operator="IN"] '); ?>
+      </div> <!-- row -->
+    </div> <!-- container -->
   </main><!-- #main -->
 
   <?php get_template_part( 'template-parts/content', 'newsletter' ); ?>

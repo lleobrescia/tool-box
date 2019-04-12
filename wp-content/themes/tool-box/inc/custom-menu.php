@@ -32,13 +32,15 @@ function tool_box_custom_menu($theme_location, $menu_class)
         foreach ($menu_items as $submenu) {
           if ($submenu->menu_item_parent == $parent) {
             $bool = true;
-            $menu_array[] = '<li class="'.$menu_class.'-nav__item"><a class="'.$menu_class.'-nav__link" title="' . $submenu->title . '" href="' . $submenu->url . '">' . $submenu->title . '</a></li>' . "\n";
+            $menu_array[] = '<li class="'.$menu_class.'-nav__item">
+              <a class="'.$menu_class.'-nav__link" title="' . $submenu->title . '" href="' . $submenu->url . '" target="' . $submenu->target . '">' . $submenu->title . '</a>
+            </li>' . "\n";
           }
         }
         if ($bool == true && count($menu_array) > 0) {
 
           $menu_list .= '<li class="'.$menu_class.'-nav__item--dropdown '.$menu_class.'-nav__item">' . "\n";
-          $menu_list .= '<a href="' . $menu_item->url . '" class="dropdown-toggle '.$menu_class.'-nav__link" >' . $menu_item->title . ' <span class="caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span></a>' . "\n";
+          $menu_list .= '<a href="' . $menu_item->url . '" class=" '.$menu_class.'-nav__link" target="' . $menu_item->target . '" title="' . $menu_item->title . '">' . $menu_item->title . '</a>' . "\n";
 
           $menu_list .= '<ul class="dropdown-menu">' . "\n";
           $menu_list .= implode("\n", $menu_array);
@@ -46,7 +48,7 @@ function tool_box_custom_menu($theme_location, $menu_class)
         } else {
 
           $menu_list .= '<li class="'.$menu_class.'-nav__item">' . "\n";
-          $menu_list .= '<a class="'.$menu_class.'-nav__link"  title="' . $menu_item->title . '" href="' . $menu_item->url . '">' . $menu_item->title . '</a>' . "\n";
+          $menu_list .= '<a class="'.$menu_class.'-nav__link" target="' . $menu_item->target . '" title="' . $menu_item->title . '" href="' . $menu_item->url . '">' . $menu_item->title . '</a>' . "\n";
         }
       }
 

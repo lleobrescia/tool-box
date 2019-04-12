@@ -25,7 +25,11 @@ get_header();
       <?php
         while (have_posts()): the_post();
 
+        if(get_post_type( get_the_ID() )=== 'receita'){
+          get_template_part('template-parts/content', 'receita');
+        }else{
           get_template_part('template-parts/content');
+        }
 
         endwhile; // End of the loop.
       ?>
@@ -49,7 +53,8 @@ get_header();
 
       <section class="row">
         <div class="comentarios">
-          <div class="fb-comments" data-href="<?= esc_url(get_the_permalink()); ?>" data-numposts="5"></div>
+          <div class="fb-comments" data-width="100%" data-href="<?= esc_url(get_the_permalink()); ?>" data-numposts="5">
+          </div>
         </div> <!-- comentarios -->
       </section> <!-- row -->
 
